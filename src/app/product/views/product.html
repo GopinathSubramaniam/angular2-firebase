@@ -1,0 +1,27 @@
+<div>
+    <h3>{{title}}</h3>
+    <div class="resource">
+        <h4>Message - {{message}}</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{product.id}}</td>
+                    <td>{{product.code}}</td>
+                    <td>{{product.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ul>
+            <li class="text" *ngFor="let item of items | async">
+                {{item.$value}}
+            </li>
+        </ul>
+    </div>
+</div>
