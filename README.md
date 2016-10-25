@@ -35,3 +35,10 @@ angular2-firebase
             this.items = af.database.list('/items');
         }
         }
+10. Definitly you will face permission denied issue from firebase. To resolve this, You need to change "RULES" in FireBase. Make "true" to read and write values.
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}   
