@@ -42,3 +42,5 @@ angular2-firebase
     ".write": true
   }
 }   
+
+For More Info: https://github.com/angular/angularfire2/blob/master/docs/1-install-and-setup.md
