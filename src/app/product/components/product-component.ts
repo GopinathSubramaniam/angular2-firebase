@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 // import {FormBuilder, Validators, ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
-import {AngularFire, FirebaseListObservable } from 'angularfire2';
+import {AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 
 import {ProductService} from '../services/product-service';
 
@@ -13,19 +13,20 @@ export class ProductComponent{
     title: string;
     message: string;
     products:Array<any>;
+    currentUser: any = {};
     items: FirebaseListObservable<any[]>;
     public newProd: any = {};
     public newUser: any = {};
-    public auth: any = {};
+   
 
     constructor(
         public productService: ProductService, 
         public af: AngularFire
         ){
-        this.title = 'Product Page';
+        // this.title = 'Product Page';
         this.message = 'This is product page';
         this.products = productService.getProducts();
-        // this.items = af.database.list('/items'); // Fetch all data 
+        this.items = af.database.list('/items'); // Fetch all data 
         
         //Fetch data by some value
         this.items = af.database.list('/items', {
@@ -34,6 +35,7 @@ export class ProductComponent{
                 equalTo: 'P1'
            }
         });
+       this.doLogin();
 
     }
 
@@ -49,5 +51,25 @@ export class ProductComponent{
             var errorMessage = error.message;
        });
     }
+    doLogin(){
+        var that = this;
+        this.af.auth.login({email: 'gopiwrld@gmail.com', password:'1234567890'},{ provider: AuthProviders.Password, method: AuthMethods.Password}).then(function(response:any){
+            console.log('response ::: ', response);
+            that.currentUser = response.auth;
+        });
+    }
 
+    updateUser(){
+        this.currentUser.updateProfile({
+            displayName: "Gopinath Updated",
+            photoURL: "https://example.com/jane-q-user/profile.jpg"
+        }).then(function(response:any) {
+            // Update successful.
+            console.log('Profile updated successfully ::::: ', response);
+        }, function(error:any) {
+        // An error happened.
+         console.log('Error occurred ::: ', error);
+        });
+
+    }
 }
