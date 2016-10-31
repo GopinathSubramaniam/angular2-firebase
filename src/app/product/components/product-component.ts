@@ -18,13 +18,20 @@ export class ProductComponent{
 
     constructor(
         productService: ProductService, 
-        af: AngularFire,
-        // form: FormBuilder
+        af: AngularFire
         ){
         this.title = 'Product Page';
         this.message = 'This is product page';
         this.products = productService.getProducts();
-        this.items = af.database.list('/items');
+        this.items = af.database.list('/items'); // Fetch all data 
+        
+        //Fetch data by some value
+        /*this.items = af.database.list('/items', {
+           query: {
+                orderByChild: 'code',
+                equalTo: '01002'
+           }
+        });*/
     }
 
     createNewProduct(){
