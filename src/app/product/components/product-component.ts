@@ -15,28 +15,39 @@ export class ProductComponent{
     products:Array<any>;
     items: FirebaseListObservable<any[]>;
     public newProd: any = {};
+    public newUser: any = {};
+    public auth: any = {};
 
     constructor(
-        productService: ProductService, 
-        af: AngularFire
+        public productService: ProductService, 
+        public af: AngularFire
         ){
         this.title = 'Product Page';
         this.message = 'This is product page';
         this.products = productService.getProducts();
-        this.items = af.database.list('/items'); // Fetch all data 
+        // this.items = af.database.list('/items'); // Fetch all data 
         
         //Fetch data by some value
-        /*this.items = af.database.list('/items', {
+        this.items = af.database.list('/items', {
            query: {
-                orderByChild: 'code',
-                equalTo: '01002'
+                orderByChild: 'prodName',
+                equalTo: 'P1'
            }
-        });*/
+        });
+
     }
 
     createNewProduct(){
-        console.log('Model ::: ', this.newProd);
+        console.info('Model ::: ', this.newProd);
         this.items.push(this.newProd);
     }
- 
+
+    createNewUser(){
+        this.af.auth.createUser({email: 'gopiwrld@gmail.com', password: '1234567890'}).catch(function(error:any){
+            console.info('Error ::: ', error);
+            var errorCode = error.code;
+            var errorMessage = error.message;
+       });
+    }
+
 }
