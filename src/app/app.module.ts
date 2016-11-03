@@ -3,6 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {AngularFireModule } from 'angularfire2';
+import { ButtonsModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import {AppComponent} from './app.component';
 import {routing, appRoutingProviders} from './app.routing';
@@ -34,7 +35,8 @@ export const firebaseConfig = {
         HttpModule,
         JsonpModule,
         AngularFireModule.initializeApp(firebaseConfig),
-        routing
+        routing,
+        ButtonsModule
     ],
     exports: [
         FormsModule,

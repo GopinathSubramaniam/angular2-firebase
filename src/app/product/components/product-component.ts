@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 // import {FormBuilder, Validators, ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import {AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 
+
+
 import {ProductService} from '../services/product-service';
 
 @Component({
