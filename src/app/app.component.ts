@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
+import {AppService} from './common/services/app-service';
+
 import '../css/main.css';
 
 @Component({
@@ -8,6 +10,13 @@ import '../css/main.css';
 })
 
 export class AppComponent implements OnInit {
+
+    public isLoggedIn: Boolean = false;
+
+    constructor(public appService: AppService){
+        
+    }
+
     ngOnInit() {
         console.log('AppComponent initializing...');
     }

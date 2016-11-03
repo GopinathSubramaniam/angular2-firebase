@@ -26,12 +26,12 @@ a:hover {
 }
 
 .main-container {
-    margin-bottom: 20px;
-    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+   /* margin-bottom: 20px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);*/
 }
 
 .main-container .resource, .main-container h3 {
-    padding: 16px 23px;
+    /*padding: 16px 23px;*/
 }
 
 .main-container h3 {
@@ -51,4 +51,16 @@ a:hover {
 
 .main-container p {
     margin: 0;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.form-control {
+    border-radius: 0px;
+}
+
+.navbar{
+    border-radius: 0px;
 }
