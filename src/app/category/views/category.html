@@ -14,10 +14,10 @@
         <button type="button" class="close" aria-label="Close" (click)="modal.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title">Small modal</h4>
+        <h4 class="modal-title">Add new category</h4>
       </div>
       <div class="modal-body">
-        ...
+          <input type="text" [(ngModel)]="categoryName"/>&nbsp;<button class="btn btn-xs btn-primary" (click)="addNewCategory()">Add</button>
       </div>
     </div>
   </div>

@@ -11,11 +11,17 @@ import {CategoryService} from '../services/category-service';
 export class CategoryComponent{
     
     private categories = <any>[];
+    private categoryName = '';
 
     constructor(private categoryService: CategoryService){
         this.categories = this.categoryService.getCategories();
     }
 
+    addNewCategory(){
+        var catObj = {name: this.categoryName};
+        this.categories.push(catObj);
+        this.categoryName = '';
+    }
 
 
 }

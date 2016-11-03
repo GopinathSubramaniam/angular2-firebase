@@ -11,7 +11,7 @@ export class CategoryService{
     }
 
     getCategories(){
-        this.categories = this.af.database.list('/categories');
+       return this.categories = this.af.database.list('/categories');
     }
 
 }
