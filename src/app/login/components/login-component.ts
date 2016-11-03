@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {AppService} from '../../common/services/app-service';
 import {AppComponent} from '../../app.component';
 
+
+
 @Component({
     selector: 'login',
     template: require('../views/login.html')

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {AppService} from './common/services/app-service';
 
+import '../css/bootstrap.min.css';
 import '../css/main.css';
 
 @Component({

@@ -26,7 +26,7 @@ export class ProductComponent{
         // this.title = 'Product Page';
         this.message = 'This is product page';
         this.products = productService.getProducts();
-        this.items = af.database.list('/items'); // Fetch all data 
+        //this.items = af.database.list('/items'); // Fetch all data 
         
         //Fetch data by some value
         this.items = af.database.list('/items', {

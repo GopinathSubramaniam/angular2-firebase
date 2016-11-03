@@ -14,7 +14,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Users <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Categories</a></li>
+                        <li><a routerLink="/category">Categories</a></li>
                         <li><a href="#">Question & Answers</a></li>
                         <li><a href="#">Scores</a></li>
                     </ul>
@@ -24,13 +24,13 @@
     </header>
 </div>
 
-<div class="main-container">
+<div class="container-fluid">
     <router-outlet></router-outlet>
 </div>
 
-<!--div class="footer-container">
+<div class="footer-container" *ngIf="isLoggedIn">
     <footer>
         <a routerLink="/">Home</a> | <a routerLink="/about" routerLinkActive="active">About</a>
         <span>&copy; 2016</span>
     </footer>
-</div-->
+</div>

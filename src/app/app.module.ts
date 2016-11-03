@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {AngularFireModule } from 'angularfire2';
-import {ButtonsModule } from 'ng2-bootstrap/ng2-bootstrap';
+import {ButtonsModule, ModalModule } from 'ng2-bootstrap';
 
 import {AppComponent} from './app.component';
 import {routing, appRoutingProviders} from './app.routing';
@@ -12,9 +12,12 @@ import {LoginComponent} from './login/components/login-component';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {ProductComponent} from './product/components/product-component';
+import {CategoryComponent} from './category/components/category-component';
 
 import {AppService} from './common/services/app-service';
 import {ProductService} from './product/services/product-service';
+import {CategoryService} from './category/services/category-service';
+
 
 export const firebaseConfig = {
     apiKey: 'AIzaSyAysE_spRpgOzdoV_1SwQdp-AguqzjlK5U',
@@ -29,7 +32,8 @@ export const firebaseConfig = {
         LoginComponent,
         HomeComponent,
         AboutComponent,
-        ProductComponent
+        ProductComponent,
+        CategoryComponent
     ],
     imports: [
         BrowserModule,
@@ -39,13 +43,14 @@ export const firebaseConfig = {
         JsonpModule,
         AngularFireModule.initializeApp(firebaseConfig),
         routing,
-        ButtonsModule
+        ButtonsModule,
+        ModalModule
     ],
     exports: [
         FormsModule,
         ReactiveFormsModule 
     ],
-    providers: [appRoutingProviders, AppService, ProductService],
+    providers: [appRoutingProviders, AppService, ProductService, CategoryService],
     bootstrap: [AppComponent]
 })
 
