@@ -1,0 +1,51 @@
+<button class="btn btn-xs btn-primary" (click)="modal.show()">New Challange</button>
+
+<!-- Create new challange modal START  -->
+<div bsModal #modal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="modal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Add new challange</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" (submit)="doLogin()">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Question</label>
+                <div class="col-sm-10">
+                    <input type="text" [(ngModel)]="challange.question" class="form-control" name="question" placeholder="Question">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Option1</label>
+                <div class="col-sm-10">
+                    <input type="text" [(ngModel)]="challange.option1" class="form-control" name="option1" placeholder="Option1">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Option2</label>
+                <div class="col-sm-10">
+                    <input type="text" [(ngModel)]="challange.option2" class="form-control" name="option2" placeholder="Option2">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Option3</label>
+                <div class="col-sm-10">
+                    <input type="text" [(ngModel)]="challange.option3" class="form-control" name="option3" placeholder="Option3">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Option4</label>
+                <div class="col-sm-10">
+                    <input type="text" [(ngModel)]="challange.option4" class="form-control" name="password" placeholder="Option4">
+                </div>
+            </div>
+        </form>
+        <button class="btn btn-md btn-block btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Create new challange modal END -->

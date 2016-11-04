@@ -19,9 +19,10 @@ export class CategoryComponent{
 
     addNewCategory(){
         var catObj = {name: this.categoryName};
-        this.categories.push(catObj);
-        this.categoryName = '';
+        if(catObj.name){
+            this.categories.push(catObj);
+            this.categoryName = '';
+        }
     }
-
 
 }

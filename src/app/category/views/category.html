@@ -1,10 +1,18 @@
-<h1> Category Page </h1>
 <button class="btn btn-xs btn-primary" (click)="modal.show()">New Category</button>
-<ul>
-    <li class="text" *ngFor="let category of categories | async">
-        {{category.name}}
-    </li>
-</ul>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories | async">
+      <td>{{category.name}}</td>
+      <td><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-trash"></i></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- Create new category modal START  -->
 <div bsModal #modal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
