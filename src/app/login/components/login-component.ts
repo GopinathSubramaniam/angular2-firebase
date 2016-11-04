@@ -23,7 +23,6 @@ export class LoginComponent{
 
     doLogin(){
         if(this.login.username && this.login.password){
-            // this.appService.isLoggedIn = true;
             this.appComponent.isLoggedIn = true;
             this.router.navigateByUrl('home');
         }else{

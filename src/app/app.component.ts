@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {LocalStorage, SessionStorage} from 'ng2-webstorage';
 
 import {AppService} from './common/services/app-service';
 
@@ -12,7 +13,8 @@ import '../css/main.css';
 
 export class AppComponent implements OnInit {
 
-    public isLoggedIn: Boolean = false;
+    @SessionStorage()
+    public isLoggedIn: Boolean;
 
     constructor(public appService: AppService){
         

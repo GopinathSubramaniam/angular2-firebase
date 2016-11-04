@@ -3,6 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {AngularFireModule } from 'angularfire2';
+import {Ng2Webstorage} from 'ng2-webstorage';
 import {ButtonsModule, ModalModule } from 'ng2-bootstrap';
 
 import {AppComponent} from './app.component';
@@ -43,6 +44,7 @@ export const firebaseConfig = {
         JsonpModule,
         AngularFireModule.initializeApp(firebaseConfig),
         routing,
+        Ng2Webstorage,
         ButtonsModule,
         ModalModule
     ],
