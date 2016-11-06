@@ -41,9 +41,10 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Question</label>
+                <label class="col-sm-2 control-label">Image</label>
                 <div class="col-sm-10">
-                    <input type="text" [(ngModel)]="challenge.question" class="form-control" name="question" placeholder="Question">
+                    <input type="file" [(ngModel)]="challenge.question" class="form-control" name="question" (change)="uploadImage($event)"/>
+                    <!--<input type="text" [(ngModel)]="challenge.question" class="form-control" name="question" placeholder="Question">-->
                 </div>
             </div>
             <div class="form-group">

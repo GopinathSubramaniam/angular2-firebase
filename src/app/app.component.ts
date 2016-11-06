@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {LocalStorage, SessionStorage} from 'ng2-webstorage';
 import {Router} from '@angular/router';
 
@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private appService: AppService){
+        private appService: AppService,
+        ){
     }
 
     ngOnInit() {
