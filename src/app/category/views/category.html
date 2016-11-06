@@ -1,4 +1,4 @@
-<button class="btn btn-xs btn-primary" (click)="modal.show()">New Category</button>
+<button class="btn btn-xs btn-primary pull-right" (click)="modal.show()">New Category</button>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -22,10 +22,11 @@
         <button type="button" class="close" aria-label="Close" (click)="modal.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title">Add new category</h4>
+        <h4 class="modal-title">Add New Category</h4>
       </div>
       <div class="modal-body">
-          <input type="text" [(ngModel)]="categoryName"/>&nbsp;<button class="btn btn-xs btn-primary" (click)="addNewCategory()">Add</button>
+          <input type="text" class="form-control" [(ngModel)]="categoryName" placeholder="Category Name"/> &nbsp;
+          <button class="btn btn-block btn-primary" (click)="addNewCategory()">Add</button>
       </div>
     </div>
   </div>

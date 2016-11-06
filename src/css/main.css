@@ -67,3 +67,12 @@ a:hover {
 .category{
     
 }
+
+.footer-container {
+    border-top: solid .05px #cac7c7;
+    width: 100%;
+}
+
+.modal-content{
+    border-radius: 0px;
+}

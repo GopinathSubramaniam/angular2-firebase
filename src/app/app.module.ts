@@ -14,12 +14,12 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {ProductComponent} from './product/components/product-component';
 import {CategoryComponent} from './category/components/category-component';
-import {ChallangeComponent} from './challange/components/challange-component';
+import {ChallengeComponent} from './challenge/components/challenge-component';
 
 import {AppService} from './common/services/app-service';
 import {ProductService} from './product/services/product-service';
 import {CategoryService} from './category/services/category-service';
-import {ChallangeService} from './challange/services/challange-service';
+import {ChallengeService} from './challenge/services/challenge-service';
 
 
 export const firebaseConfig = {
@@ -37,7 +37,7 @@ export const firebaseConfig = {
         AboutComponent,
         ProductComponent,
         CategoryComponent,
-        ChallangeComponent
+        ChallengeComponent
     ],
     imports: [
         BrowserModule,
@@ -55,7 +55,7 @@ export const firebaseConfig = {
         FormsModule,
         ReactiveFormsModule 
     ],
-    providers: [appRoutingProviders, AppService, ProductService, CategoryService, ChallangeService],
+    providers: [appRoutingProviders, AppService, ProductService, CategoryService, ChallengeService],
     bootstrap: [AppComponent]
 })
 

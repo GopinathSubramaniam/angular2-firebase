@@ -4,7 +4,7 @@ import {AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from '
 @Injectable()
 export class CategoryService{
     
-    private categories:FirebaseListObservable<any[]>;
+    public categories:FirebaseListObservable<any[]>;
     
     constructor(private af: AngularFire){
         
