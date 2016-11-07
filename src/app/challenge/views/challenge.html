@@ -12,7 +12,7 @@
     <tbody>
         <tr *ngFor="let challenge of challenges | async">
             <td>{{challenge.category}}</td>
-            <td>{{challenge.question}}</td>
+            <td style="width:10%;height:100px;"><img [src]="challenge.question" style="height:100%; width:100%"/></td>
             <td>{{challenge.option1}}, {{challenge.option2}}, {{challenge.option3}}, {{challenge.option4}}</td>
             <td><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-trash"></i></td>
         </tr>
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </form>
-        <button class="btn btn-md btn-block btn-primary" (click)="createChallange()">Save</button>
+        <button class="btn btn-md btn-block btn-primary" (click)="createChallange($event)">Save</button>
       </div>
     </div>
   </div>

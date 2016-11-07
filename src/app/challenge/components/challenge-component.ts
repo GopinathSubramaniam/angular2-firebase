@@ -15,6 +15,7 @@ export class ChallengeComponent{
     private challenges = <any>[]; 
     private categories = <any>[];
     private challenge:any= {};
+    private file:any;
     
     constructor(
         private appService: AppService,
@@ -24,22 +25,33 @@ export class ChallengeComponent{
         this.categories = this.categoryService.getCategories();
     }
 
-    createChallange(){
-        console.log('Challenge :::: ',this.challenge);
-        this.challenges.push(this.challenge);
-        this.challenge.category = '';
-        this.challenge.question = '';
-        this.challenge.option1 = '';
-        this.challenge.option2 = '';
-        this.challenge.option3 = '';
-        this.challenge.option4 = '';
-        console.log(':::: Challenge Saved :::: ');
+    createChallange(ev:any){
+        console.log('ev ::: ', this.file);
+        var that = this;
+        this.appService.uploadImage(this.file).then(function(imageUrl){
+            console.log('Image Url :::: '+imageUrl);
+            if(that.challenge.option1 && that.challenge.option2 && that.challenge.option3){
+                console.log('Challenge :::: ',that.challenge);
+                that.challenge.question = imageUrl;
+                that.challenges.push(that.challenge);
+                // Reset challenge form
+                that.challenge.category = '';
+                that.challenge.question = '';
+                that.challenge.option1 = '';
+                that.challenge.option2 = '';
+                that.challenge.option3 = '';
+                that.challenge.option4 = '';
+                console.log(':::: Challenge Saved :::: ');
+            }
+        });
     }
 
     uploadImage(ev:any){
         console.log('Image :: ', ev.srcElement.files[0]);
-        this.appService.uploadImage(ev.srcElement.files[0]);
+        this.file =  ev.srcElement.files[0]
+        /*this.appService.uploadImage(ev.srcElement.files[0]).then(function(imageUrl){
+            console.log('Image Url :::: '+imageUrl);
+        });*/
     }
-
 
 }

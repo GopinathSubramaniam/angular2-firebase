@@ -20,9 +20,12 @@ export class AppService{
     }
 
     uploadImage(file:any){
-        console.log('File :::: ', file.name);
-        let child = this.firebaseStorage.child('/images/'+file.name);
-        child.put(file);
-       
+        var that = this;
+        return new Promise(function(resolve, reject){
+            let child = that.firebaseStorage.child('/images/'+file.name);
+            child.put(file).then(function(res:any){
+                resolve(res.downloadURL);
+            });
+        });
     }
 }
