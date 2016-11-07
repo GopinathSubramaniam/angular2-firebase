@@ -22,6 +22,8 @@ export class CategoryComponent{
         if(catObj.name){
             this.categories.push(catObj);
             this.categoryName = '';
+        }else{
+            alert('Please Enter Category Name');
         }
     }
 

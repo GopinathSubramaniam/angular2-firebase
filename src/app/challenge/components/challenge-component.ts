@@ -11,7 +11,7 @@ import {CategoryService} from '../../category/services/category-service';
 })
 
 export class ChallengeComponent{
-
+    busy: Boolean = false;
     private challenges = <any>[]; 
     private categories = <any>[];
     private challenge:any= {};
@@ -21,8 +21,9 @@ export class ChallengeComponent{
         private appService: AppService,
         private challengeService: ChallengeService,
         private categoryService: CategoryService ){
-        this.challenges = this.challengeService.getChallengesByType('Vegetables');
-        this.categories = this.categoryService.getCategories();
+        this.challenges = this.challengeService.getQuestionsByType('Vegetables');
+        this.categories= this.categoryService.getCategories();
+        this.busy = true;
     }
 
     createChallange(ev:any){
@@ -43,6 +44,13 @@ export class ChallengeComponent{
                 that.challenge.option4 = '';
                 console.log(':::: Challenge Saved :::: ');
             }
+        });
+    }
+
+    deleteChallenge(key:any){
+        console.log('Key :::: ', key);
+        this.challenges.remove(key).then(function(res:any){
+            console.log('Res :::: ', res);
         });
     }
 

@@ -9,7 +9,7 @@ export class ChallengeService{
 
     }
 
-    getChallengesByType(type:any){
+    getQuestionsByType(type:any){
         console.log('Type ::: ', type);
         return this.af.database.list('/challenges/'+type);
     }

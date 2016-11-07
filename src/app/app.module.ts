@@ -5,6 +5,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
 import {AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import {Ng2Webstorage} from 'ng2-webstorage';
 import {ButtonsModule, ModalModule } from 'ng2-bootstrap';
+import {BusyModule} from 'angular2-busy';
 
 import {AppComponent} from './app.component';
 import {routing, appRoutingProviders} from './app.routing';
@@ -52,12 +53,12 @@ const firebaseAuthConfigWgs = {
         ReactiveFormsModule,
         HttpModule,
         JsonpModule,
-        // AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfigWgs),
         AngularFireModule.initializeApp(firebaseConfig),
         routing,
         Ng2Webstorage,
         ButtonsModule,
-        ModalModule
+        ModalModule,
+        BusyModule
     ],
     exports: [
         FormsModule,
