@@ -3,13 +3,18 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Image Url</th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let category of categories | async">
       <td>{{category.name}}</td>
-      <td><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-trash"></i></td>
+      <td style="width:10%;height:100px;"><img [src]="category.iconUrl" style="height:100%; width:100%"/></td>
+      <td>
+        <span class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-pencil"></i>&nbsp;Edit</span>
+        <span class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash" (click)="deleteCategory(category.$key)"></i>&nbsp;Delete</span>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -25,6 +30,7 @@
         <h4 class="modal-title">Add New Category</h4>
       </div>
       <div class="modal-body">
+          <input type="file" [(ngModel)]="categoryImg" class="form-control" name="categoryImg" (change)="getImage($event)"/>&nbsp;
           <input type="text" class="form-control" [(ngModel)]="categoryName" placeholder="Category Name"/> &nbsp;
           <button class="btn btn-block btn-primary" (click)="addNewCategory()">Add</button>
       </div>
